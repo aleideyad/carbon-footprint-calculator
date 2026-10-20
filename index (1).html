@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carbon Footprint Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid page">
+
+    <!-- Heading -->
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        <h1 class="text-center main-title">Carbon Footprint Calculator</h1>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        <div class="tab-bar d-flex align-items-center justify-content-between">
+          <ul class="nav nav-tabs border-0" id="mainTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">General</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="travel-tab" data-bs-toggle="tab" data-bs-target="#travel" type="button" role="tab">Travel</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="food-tab" data-bs-toggle="tab" data-bs-target="#food" type="button" role="tab">Food</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="electronic-tab" data-bs-toggle="tab" data-bs-target="#electronic" type="button" role="tab">Electronic usage</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="shopping-tab" data-bs-toggle="tab" data-bs-target="#shopping" type="button" role="tab">Shopping</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button" role="tab">Result</button>
+            </li>
+          </ul>
+          <button class="btn btn-green" id="homeBtn" type="button">Home</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="row justify-content-center mt-3">
+      <div class="col-12 col-md-9 col-lg-5">
+        <div class="card card-main">
+          <div class="card-header text-center">Fill the form below</div>
+
+          <div class="card-body">
+            <div class="tab-content">
+
+              <!-- General -->
+              <div class="tab-pane fade show active" id="general" role="tabpanel">
+                <form>
+                  <div class="row mb-3 align-items-center">
+                    <label for="name" class="col-5 col-form-label">Name</label>
+                    <div class="col-7"><input type="text" class="form-control" id="name"></div>
+                  </div>
+                  <div class="row mb-3 align-items-center">
+                    <label for="age" class="col-5 col-form-label">Age</label>
+                    <div class="col-7"><input type="number" class="form-control" id="age" min="0"></div>
+                  </div>
+                  <div class="row mb-3 align-items-center">
+                    <label for="country" class="col-5 col-form-label">Country</label>
+                    <div class="col-7">
+                      <select class="form-select" id="country">
+                        <option selected>Saudi Arabia</option>
+                        <option>United Arab Emirates</option>
+                        <option>Kuwait</option>
+                        <option>Qatar</option>
+                        <option>Bahrain</option>
+                        <option>Oman</option>
+                        <option>Egypt</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Home (intro content) -->
+              <div class="tab-pane fade" id="home" role="tabpanel">
+                <h2 class="text-center sub-title">Climate change is real!!</h2>
+                <p class="intro">
+                  Climate change is one of the biggest challenges facing our planet today. Rising
+                  temperatures, melting ice caps and extreme weather are all linked to the greenhouse
+                  gases released by human activity. Every day, the way we travel, the energy we use and
+                  the food we eat adds to the carbon dioxide in our atmosphere.
+                </p>
+                <div class="text-center">
+                  <img src="carbon-footprint.svg" class="img-fluid hero-img"
+                       alt="Illustration of the Earth surrounded by leaves representing environmental sustainability">
+                </div>
+                <h4 class="text-center assess-title">Do you know how much carbon you produce? Assess your carbon footprint!</h4>
+                <p class="text-center awareness">
+                  Small changes in our daily lives can make a big difference. By understanding your
+                  carbon footprint, you can take simple steps to protect the environment for future
+                  generations.
+                </p>
+                <div class="text-center">
+                  <a href="#" class="btn btn-primary calc-btn" id="calcBtn" role="button">Calculate</a>
+                </div>
+              </div>
+
+              <!-- Travel -->
+              <div class="tab-pane fade" id="travel" role="tabpanel">
+                <form>
+                  <div class="row mb-3 align-items-center">
+                    <label for="carKm" class="col-7 col-form-label">Car distance per week (km)</label>
+                    <div class="col-5"><input type="number" class="form-control" id="carKm" min="0"></div>
+                  </div>
+                  <div class="row mb-3 align-items-center">
+                    <label for="flights" class="col-7 col-form-label">Flights per year</label>
+                    <div class="col-5"><input type="number" class="form-control" id="flights" min="0"></div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Food -->
+              <div class="tab-pane fade" id="food" role="tabpanel">
+                <form>
+                  <div class="row mb-3 align-items-center">
+                    <label for="diet" class="col-5 col-form-label">Diet</label>
+                    <div class="col-7">
+                      <select class="form-select" id="diet">
+                        <option value="2500">Meat every day</option>
+                        <option value="1800" selected>Meat a few times a week</option>
+                        <option value="1300">Vegetarian</option>
+                        <option value="900">Vegan</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row mb-3 align-items-center">
+                    <label for="takeaway" class="col-7 col-form-label">Takeaway meals per week</label>
+                    <div class="col-5"><input type="number" class="form-control" id="takeaway" min="0"></div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Electronic usage -->
+              <div class="tab-pane fade" id="electronic" role="tabpanel">
+                <form>
+                  <div class="row mb-3 align-items-center">
+                    <label for="screen" class="col-7 col-form-label">Screen time per day (hours)</label>
+                    <div class="col-5"><input type="number" class="form-control" id="screen" min="0"></div>
+                  </div>
+                  <div class="row mb-3 align-items-center">
+                    <label for="devices" class="col-7 col-form-label">Number of devices owned</label>
+                    <div class="col-5"><input type="number" class="form-control" id="devices" min="0"></div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Shopping -->
+              <div class="tab-pane fade" id="shopping" role="tabpanel">
+                <form>
+                  <div class="row mb-3 align-items-center">
+                    <label for="clothes" class="col-7 col-form-label">Clothing items per month</label>
+                    <div class="col-5"><input type="number" class="form-control" id="clothes" min="0"></div>
+                  </div>
+                  <div class="row mb-3 align-items-center">
+                    <label for="orders" class="col-7 col-form-label">Online orders per month</label>
+                    <div class="col-5"><input type="number" class="form-control" id="orders" min="0"></div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Result -->
+              <div class="tab-pane fade" id="result" role="tabpanel">
+                <div class="text-center py-3">
+                  <p class="mb-1">Your estimated yearly carbon footprint</p>
+                  <h3 id="resultValue" class="result-value">Press Calculate on the Home tab</h3>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card-footer text-center">
+            <button class="btn btn-green me-2" id="prevBtn" type="button">Prev</button>
+            <button class="btn btn-green" id="nextBtn" type="button">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var tabIds = ["general-tab", "home-tab", "travel-tab", "food-tab", "electronic-tab", "shopping-tab", "result-tab"];
+
+    function currentIndex() {
+      for (var i = 0; i < tabIds.length; i++) {
+        if (document.getElementById(tabIds[i]).classList.contains("active")) return i;
+      }
+      return 0;
+    }
+
+    function showTab(i) {
+      bootstrap.Tab.getOrCreateInstance(document.getElementById(tabIds[i])).show();
+    }
+
+    function updateButtons() {
+      var i = currentIndex();
+      document.getElementById("prevBtn").disabled = (i === 0);
+      document.getElementById("nextBtn").disabled = (i === tabIds.length - 1);
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", function () {
+      var i = currentIndex();
+      if (i > 0) showTab(i - 1);
+    });
+    document.getElementById("nextBtn").addEventListener("click", function () {
+      var i = currentIndex();
+      if (i < tabIds.length - 1) showTab(i + 1);
+    });
+    document.getElementById("homeBtn").addEventListener("click", function () { showTab(1); });
+
+    document.querySelectorAll("#mainTabs button").forEach(function (b) {
+      b.addEventListener("shown.bs.tab", updateButtons);
+    });
+
+    function num(id) { return parseFloat(document.getElementById(id).value) || 0; }
+
+    document.getElementById("calcBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+      var total =
+        num("carKm") * 52 * 0.2 +
+        num("flights") * 250 +
+        parseFloat(document.getElementById("diet").value) +
+        num("takeaway") * 52 * 1.5 +
+        num("screen") * 365 * 0.05 +
+        num("devices") * 50 +
+        num("clothes") * 12 * 10 +
+        num("orders") * 12 * 5;
+      document.getElementById("resultValue").textContent = Math.round(total).toLocaleString() + " kg CO\u2082 per year";
+      showTab(6);
+    });
+
+    updateButtons();
+  </script>
+</body>
+</html>
