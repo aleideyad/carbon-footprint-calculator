@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#e3f2fd"/>
+  <circle cx="200" cy="150" r="100" fill="#1e88e5"/>
+  <path d="M140 110c20-25 55-20 65 5s-10 35-30 40-50 5-35-45z" fill="#43a047"/>
+  <path d="M225 160c25-10 50 10 40 35s-40 30-55 15-5-40 15-50z" fill="#43a047"/>
+  <path d="M170 215c15-10 30 0 25 15s-25 15-30 5 0-15 5-20z" fill="#66bb6a"/>
+  <g fill="#90a4ae" opacity="0.9">
+    <circle cx="70" cy="70" r="18"/><circle cx="95" cy="60" r="14"/><circle cx="85" cy="85" r="12"/>
+    <circle cx="320" cy="75" r="18"/><circle cx="345" cy="65" r="14"/><circle cx="335" cy="90" r="12"/>
+  </g>
+  <text x="200" y="285" font-family="Arial" font-size="18" fill="#1b5e20" text-anchor="middle">CO₂ · Our Planet</text>
+</svg>
